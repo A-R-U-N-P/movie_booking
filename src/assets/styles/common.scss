@@ -1,0 +1,278 @@
+// $common-color: #38c55f;
+// $button-color: #38c55f;
+// $mat-button-color: #36C95F;
+$common-color: #738cff;
+$button-color: #738cff;
+$mat-button-color: #738cff;
+
+
+/**********MAT CARD STYLES**************/
+
+.mat-card {
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    overflow: auto !important;
+}
+
+.mat-card-title {
+    font-size: 28px;
+    font-weight: 600;
+    color: #000;
+    // font-family: 'poppins', sans-serif;
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+    word-wrap: break-word;
+    line-height: 1;
+}
+
+/* to change mat form-field and input color */
+.mat-form-field-appearance-outline .mat-form-field-outline {
+    color: $common-color !important;
+}
+
+// mat-card-title {
+//     margin-bottom: 5rem;
+//     line-height: 1;
+// }
+
+/* Button Background Color */
+
+.mat-raised-button,
+.mat-stroked-button,
+.mat-flat-button {
+    background: $mat-button-color !important;
+    color: white;
+    line-height: 1;
+    min-width: 90px !important;
+
+    &.grow {
+        transition: all .2s ease-in-out;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    &.close {
+        background-color: rgb(255, 67, 67) !important;
+
+    }
+
+
+}
+
+.mat-icon-button,
+.mat-icon {
+    // background-color: $mat-button-color;
+    color: $mat-button-color !important;
+    // width: auto !important;
+    // height: auto !important;
+
+    &.grow {
+        transition: all .2s ease-in-out;
+
+        &:hover {
+            transform: scale(1.4);
+        }
+    }
+
+}
+
+// To remove focus background
+.mat-button-focus-overlay {
+    background-color: transparent !important;
+    transition: none !important;
+    transform: none !important;
+    background-color: rgb(255, 255, 255) !important;
+}
+
+.mat-dialog-container {
+    border-radius: 16px !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+    padding: 0 !important;
+    transition: all .2s ease-in-out;
+    width: 700px !important;
+}
+
+.PanelClass {
+    margin-top: 30px !important;
+    position: absolute !important;
+    left: 3vh !important;
+    min-width: 100% !important;
+    transform: none !important;
+
+}
+
+/*-------------MAT STEPPER STYLE--------------*/
+.mat-step-icon-selected,
+.mat-step-icon-state-edit {
+    background-color: $mat-button-color !important;
+    color: white !important;
+
+}
+
+/**************************************/
+
+
+.t-a-c {
+    text-align: center;
+}
+
+.p-10 {
+    padding: 10px;
+}
+
+.mat-card-header-text {
+    margin: 0 !important;
+}
+
+.p-t-0 {
+    padding-top: 0;
+
+}
+
+.p-b-0 {
+    padding-bottom: 0;
+
+}
+
+.header-bg {
+    border-bottom: 1px solid #ddd;
+    background-color: whitesmoke;
+}
+
+mat-label {
+    color: black;
+}
+
+
+//MARIGIN CLASS
+
+.m-5 {
+    margin: 5px !important;
+}
+
+.m-10 {
+    margin: 10px !important;
+}
+
+.m-15 {
+    margin: 15px !important;
+}
+
+.m-20 {
+    margin: 20px !important;
+}
+
+.m-25 {
+    margin: 25px !important;
+}
+
+.m-30 {
+    margin: 30px !important;
+}
+
+//MARGIN RIGHT CLASS
+
+.m-r-5 {
+    margin-right: 5px !important;
+}
+
+.m-r-10 {
+    margin-right: 10px !important;
+}
+
+.m-r-15 {
+    margin-right: 15px !important;
+}
+
+.m-r-20 {
+    margin-right: 20px !important;
+}
+
+.m-r-25 {
+    margin-right: 25px !important;
+}
+
+.m-r-30 {
+    margin-right: 30px !important;
+}
+
+//MARGIN LEFT CLASS
+
+.m-l-5 {
+    margin-left: 5px !important;
+}
+
+.m-l-10 {
+    margin-left: 10px !important;
+}
+
+.m-l-15 {
+    margin-left: 15px !important;
+}
+
+.m-l-20 {
+    margin-left: 20px !important;
+}
+
+.m-l-25 {
+    margin-left: 25px !important;
+}
+
+.m-l-30 {
+    margin-left: 30px !important;
+}
+
+
+//MARGIN BOTTOM CLASS
+
+.m-b-5 {
+    margin-bottom: 5px !important;
+}
+
+.m-b-10 {
+    margin-bottom: 10px !important;
+}
+
+.m-b-15 {
+    margin-bottom: 15px !important;
+}
+
+.m-b-20 {
+    margin-bottom: 20px !important;
+}
+
+.m-b-25 {
+    margin-bottom: 25px !important;
+}
+
+.m-b-30 {
+    margin-bottom: 30px !important;
+}
+
+//MARGIN TOP CLASS
+
+.m-t-5 {
+    margin-top: 5px !important;
+}
+
+.m-t-10 {
+    margin-top: 10px !important;
+}
+
+.m-t-15 {
+    margin-top: 15px !important;
+}
+
+.m-t-20 {
+    margin-top: 20px !important;
+}
+
+.m-t-25 {
+    margin-top: 25px !important;
+}
+
+.m-t-30 {
+    margin-bottom: 30px !important;
+}

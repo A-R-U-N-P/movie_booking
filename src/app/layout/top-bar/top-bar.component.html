@@ -1,0 +1,40 @@
+<mat-toolbar fxLayoutAlign="space-between center">
+  <div fxFlex="16" fxLayout="row" fxLayoutAlign="space-between center">
+    <img src="./assets/images/movie.png" alt="" />
+    <!-- <span style="font-size: 15px;">VANAKKAM</span> -->
+    <button *ngIf="0" mat-icon-button (click)="toggleSideNav(isToggle = !isToggle)">
+      <mat-icon [class.rotate-180-Right]="isToggle"> keyboard_double_arrow_left</mat-icon>
+    </button>
+  </div>
+  <div fxLayout="row">
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <span style="font-size: 13px;">Chennai</span>
+      <mat-icon>location_on</mat-icon>
+    </div>
+
+    <!-- <div style="gap: 1px;" fxLayout="column" fxLayoutAlign="end center">
+      <div *ngIf="currentTime" class="clock">{{currentTime | date:'mediumTime'}},
+        {{currentTime | date:'dd-MMM-YYYY'}}
+      </div>
+      <div *ngIf="currentTime" class="clock">{{msg | titlecase}}</div>
+    </div> -->
+
+    <div>
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+
+
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>notifications_active</mat-icon>
+          <span>notification</span>
+        </button>
+        <button mat-menu-item (click)="logout()">
+          <mat-icon>logout</mat-icon>
+          <span>Log Out</span>
+        </button>
+      </mat-menu>
+    </div>
+  </div>
+</mat-toolbar>

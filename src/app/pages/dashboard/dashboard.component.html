@@ -1,0 +1,45 @@
+<!-- search filter -->
+<div fxLayoutAlign="end end">
+    <div style="font-size: 11px;">
+        <mat-form-field appearance="outline">
+            <mat-icon matPrefix>search</mat-icon>
+            <mat-label style="color: white !important;">Search</mat-label>
+            <input style="color: white !important;" matInput type="text" [(ngModel)]="value"
+                (keyup)="applyFilter($event)" autocomplete="off" #input>
+            <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value='';applyFilter($event)">
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+    </div>
+
+</div>
+
+<div fxLayout="column">
+    <span style="color: white;font-size: 25px;font-weight: 600 !important;margin-bottom: 2%;">Latest Movies</span>
+    <div fxLayout="row warp" fxLayoutAlign="start center">
+        <ng-container *ngFor="let movie of moviesList">
+
+            <mat-card [style.background-image]="'url('+movie.logo+')'" class="movie-class grow"
+                (click)="showInfo(movie)">
+
+                <div class="rating">
+                    <mat-icon>grade</mat-icon>
+                    <span style="color: white;font-size: 13px;font-weight: 500;">{{movie.rating}}/10</span>
+                </div>
+
+            </mat-card>
+        </ng-container>
+
+    </div>
+    <span style="color: white;font-size: 26px;font-weight: 600 !important;margin: 2% 0%;">Near By venues</span>
+    <div fxLayout="row warp" fxLayoutAlign="start center">
+        <ng-container *ngFor="let movie of moviesList">
+
+            <mat-card [style.background-image]="'url('+movie.logo+')'" class="movie-class grow">
+
+
+            </mat-card>
+        </ng-container>
+
+    </div>
+</div>

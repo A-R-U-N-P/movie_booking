@@ -1,0 +1,56 @@
+<div fxLayout="column" fxLayoutGap="20px">
+    <div fxLayoutAlign="space-between center" class="p-10 header-bg">
+        <mat-card-title>{{dialogData.title}}</mat-card-title>
+        <button mat-icon-button class="grow" (click)="dialogRef.close()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+
+    <div class="p-10">
+        <form [formGroup]="driverFromGroup" fxLayoutGap="5px" fxLayout="row wrap">
+            <mat-form-field fxFlex.gt-sm="48" fxFlex.xs="100" fxFlex.sm="100" appearance="outline">
+                <mat-label> {{'Booking No'| titlecase}} </mat-label>
+                <input matInput disabled value="{{dialogData?.data?.bookingNo}}">
+            </mat-form-field>
+            <mat-form-field fxFlex.gt-sm="48" fxFlex.xs="100" fxFlex.sm="100" appearance="outline">
+                <mat-label> {{'Customer Name'| titlecase}} </mat-label>
+                <input matInput disabled value="{{dialogData?.data?.CusName}}">
+            </mat-form-field>
+            <mat-form-field fxFlex.gt-sm="48" fxFlex.xs="100" fxFlex.sm="100" appearance="outline">
+                <mat-label> {{ 'active drivers'| titlecase}} </mat-label>
+                <input placeholder="Pick one" matInput formControlName="activeDriver" [matAutocomplete]="driver"
+                    (keyup)="clearCabDetails($event);" autocomplete="off">
+                <mat-autocomplete autoActiveFirstOption #driver="matAutocomplete">
+                    <mat-option *ngFor="let option of activeDriverObservable | async" [value]="option.dName"
+                        (click)="activeDriverSelectionChange(option)">
+                        {{option.dName}}
+                    </mat-option>
+                </mat-autocomplete>
+                <mat-error>
+                    <span *ngIf="driverFromGroup.controls['activeDriver'].hasError('required') && 
+                driverFromGroup.controls['activeDriver'].touched">
+                        Please Select Active Driver
+                    </span>
+                    <span *ngIf="driverFromGroup.controls['activeDriver'].value && 
+                        driverFromGroup.controls['activeDriver'].hasError('selectionError')">
+                        Select Driver From Drop Down
+                    </span>
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field fxFlex.gt-sm="48" fxFlex.xs="100" fxFlex.sm="100" appearance="outline">
+                <mat-label> {{'cab details'| titlecase}} </mat-label>
+                <input readonly [disabled]="true" matInput formControlName="cabDetails" autocomplete="off">
+            </mat-form-field>
+        </form>
+
+        <div fxLayoutAlign="center center" fxLayout.lt-sm="column">
+            <button mat-raised-button class="grow close" (click)="dialogRef.close()">Clear</button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button mat-raised-button [disabled]="driverFromGroup.invalid" class="grow" (click)="onSave()">Save
+            </button>
+        </div>
+
+    </div>
+
+</div>

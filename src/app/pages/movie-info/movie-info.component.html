@@ -1,0 +1,58 @@
+<div>
+    <div [style.background-image]="'url('+movieData.logo+')'" style=" background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;height: 80vh;">
+        <div style="background-color: rgb(0 0 0 / 50%);height: 100%;" fxLayout="row" fxLayoutAlign="start center">
+            <figure>
+                <img style="height: 20rem;
+                width: 13rem;" [src]="movieData.logo" alt="">
+            </figure>
+            <div fxLayout="column" fxLayoutGap="15">
+                <div style="color: white;font-size: 25px;font-weight: 600;">{{movieData.name ||"Pichaikkaran 2"}}</div>
+
+                <div fxLayout="row" fxLayoutAlign="start center">
+                    <mat-icon>grade</mat-icon>
+                    <span style="color: white;font-size: 13px;font-weight: 500;">{{movieData.rating}}/10</span>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10">
+                    <span
+                        style="height: 1rem;width: 2rem;background-color: whitesmoke;padding: 4px;border-radius: 4px;text-align: center;font-size: 13px;font-weight: 600;">2D
+                    </span>
+                    <span
+                        style="height: 1rem;width: 2.5rem;background-color: whitesmoke;padding: 4px;border-radius: 4px;text-align: center;font-size: 13px;font-weight: 600;">
+                        {{ 'tamil' | uppercase }}
+                    </span>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10">
+
+                    <div style="color: white;font-size: 13px;font-weight: 500;">{{movieData.duration || '2h 28m'}}</div>
+                    <div style="height: 5px;width: 5px; border-radius: 50%;background-color: white;"></div>
+                    <div style="color: white;font-size: 13px;font-weight: 500;">{{movieData.genre ||'action'}}</div>
+                    <div style="height: 5px;width: 5px; border-radius: 50%;background-color: white;"></div>
+                    <div style="color: white;font-size: 13px;font-weight: 500;">
+                        {{movieData.release_date ||'19 may , 2023'}}</div>
+
+                </div>
+                <div>
+                    <button class="grow" mat-raised-button (click)="bookTicket()">Book tickets</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div style="font-size: 25px;font-weight: 600;color: white;margin: 2% 0%;">
+        About the movie
+    </div>
+    <div style="font-size: 15px;font-weight: 500;color: white;margin: 2% 0%;line-height: 1.2;">
+        A poor man with a painful past becomes a victim of illegal brain replacement surgery, leaving him struggling in
+        the shoes of a rich billionaire.
+    </div>
+    <!-- <div style="font-size: 25px;font-weight: 600;color: white;margin: 2% 0%;">
+        cast
+    </div>
+    <div style="font-size: 15px;font-weight: 500;color: white;margin: 2% 0%;line-height: 1.2;">
+        A poor man with a painful past becomes a victim of illegal brain replacement surgery, leaving him struggling in
+        the shoes of a rich billionaire.
+    </div> -->
+</div>

@@ -1,0 +1,47 @@
+<div class="background" style=" background-image:url(https://wallpaperaccess.com/full/3910936.png)">
+    <mat-card fxFlex.sm="50" fxFlex.xs="80" fxFlex.xl="80" class="center-content">
+        <mat-card-title class="p-10">Sign in</mat-card-title>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="p-10" fxLayout="column" fxLayoutGap="8px">
+            <!-- User Name -->
+            <mat-form-field>
+                <mat-label>Login</mat-label>
+                <input matInput formControlName="email" autocomplete="off">
+                <mat-icon matSuffix>account_circle</mat-icon>
+                <mat-error>
+                    <span *ngIf="loginForm.controls['email'].touched 
+                          && loginForm.controls['email'].hasError('pattern')">
+                        Invalid Email Id
+                    </span>
+                    <span *ngIf="loginForm.controls['email'].hasError('required') 
+                         && loginForm.controls['email'].touched">
+                        Please Enter Email Id
+                    </span>
+                </mat-error>
+            </mat-form-field>
+
+            <!-- password -->
+            <mat-form-field>
+                <mat-label>Enter password</mat-label>
+                <input matInput [type]="hide ? 'password' 
+                : 'text'" formControlName="password" autocomplete="off">
+                <mat-icon matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                <mat-error>
+                    <span *ngIf="loginForm.controls['password'].hasError('required') 
+                        && loginForm.controls['password'].touched">
+                        Please Enter password
+                    </span>
+                    <span *ngIf=" loginForm.controls['password'].touched 
+                        && loginForm.controls['password'].hasError('pattern')">
+                        password length should be Minimum 8 ,
+                        Must Includes number and special charcters :(
+                    </span>
+                </mat-error>
+            </mat-form-field>
+            <div>
+                <button mat-raised-button type="submit" style="margin-top: 5px;" class="grow"
+                    [disabled]="loginForm.invalid">Sign in</button>
+            </div>
+        </form>
+    </mat-card>
+</div>

@@ -1,0 +1,28 @@
+<div fxLayout="column" fxLayoutGap="20">
+    <ng-container *ngFor="let data of venuesList;let i=index">
+        <div fxLayout="row">
+            <div style="color: white;min-height: 5rem;font-size: 18px;font-weight: 500;" fxFlex="50">
+                {{i+1 + "."+data.name}}
+            </div>
+            <div fxLayout="row warp" fxFlex="50">
+                <ng-container *ngFor="let show of data.show_time">
+                    <div [ngStyle]=" show.status == 'available' ? {color: 'chartreuse'} : show.status == 'almost Full'? {color: 'coral'} :{color: 'white'} "
+                        [matTooltip]="show.status" matTooltipPosition="above"
+                        style="height: 3rem; width: 8rem; outline: 1px solid;text-align: center;display: flex;align-items: center;justify-content: center;border-radius: 5px;cursor: pointer;margin: 0.5rem;">
+                        {{show.time |uppercase}}<br>
+                        {{show.sound_system}}
+                    </div>
+                </ng-container>
+
+
+            </div>
+        </div>
+
+
+        <!-- <mat-card style="min-height: 5rem;"> -->
+
+        <!-- </mat-card> -->
+
+    </ng-container>
+
+</div>

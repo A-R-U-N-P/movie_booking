@@ -1,0 +1,30 @@
+mat-toolbar {
+    height: 50px;
+    padding: 10px;
+    background-color: #1b2531;
+    color: white;
+}
+
+img {
+    width: 6.6ch;
+    height: 5ch;
+    padding: 0px 0px 0px 15px;
+}
+
+.clock {
+    font-size: 12px;
+    height: 20px;
+}
+
+.mat-icon-button,
+.mat-icon {
+    // width: 3rem !important;
+    height: auto !important;
+    transition: transform 0.3s linear;
+}
+
+.rotate-180-Right {
+    transform: rotate(-180deg);
+    transition: transform 0.3s linear;
+
+}
