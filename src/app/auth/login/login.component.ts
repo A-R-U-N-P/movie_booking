@@ -47,11 +47,11 @@ export class LoginComponent implements OnInit, AfterViewInit, OnDestroy {
   onSubmit() {
     const loginData = this.loginForm.value;
     localStorage.setItem("USER", "ARUN");
-    this.rout.navigateByUrl("/dashboard");
+    this.rout.navigateByUrl("/explore");
 
     this.auth.login(loginData).subscribe((res: any) => {
       localStorage.setItem("USER", "ARUN");
-      this.rout.navigateByUrl("/dashboard");
+      this.rout.navigateByUrl("/explore");
     });
 
   }

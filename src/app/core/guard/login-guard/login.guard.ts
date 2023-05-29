@@ -16,7 +16,7 @@ export class LoginGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean
       | UrlTree> | boolean | UrlTree {
     if (this.AuthguardService.gettoken()) {
-      this.router.navigateByUrl("/dashboard");
+      this.router.navigateByUrl("/explore");
     }
 
     return true;
